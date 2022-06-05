@@ -1,0 +1,16 @@
+#include <bits/stdc++.h> 
+int findDuplicate(vector<int> &nums, int n){
+	// Write your code here.
+    for(int i=0;i<n;i++)
+    {
+        nums[nums[i]%n]+=n;
+     }
+    for(int i=0;i<n;i++)
+    {
+        if(nums[i]/n>1)
+        {
+            return i;
+        }
+    }
+   return -1;    
+}
